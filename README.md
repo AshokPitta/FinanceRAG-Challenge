@@ -34,15 +34,17 @@ earnings calls, and more.
 ---
 
 ## 🗂️ Project Structure
-├── retrieval/        # Document retrieval pipeline
-├── rerank/           # Reranking logic
-├── generate/         # Answer generation
-├── data/             # Dataset scripts
-├── notebooks/        # Exploration & experiments
-├── results/          # Output CSV files
-├── requirements.txt  # Dependencies
-└── run.sh            # Full pipeline runner
----
+
+```
+├── retrieval/          # Document retrieval pipeline
+├── rerank/             # Reranking logic
+├── generate/           # Answer generation
+├── data/               # Dataset scripts
+├── notebooks/          # Exploration & experiments
+├── results/            # Output CSV files
+├── requirements.txt    # Dependencies
+└── run.sh              # Full pipeline runner
+```
 
 ## ⚙️ Setup & Usage
 
