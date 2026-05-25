@@ -101,6 +101,8 @@ The system runs in two stages across all seven datasets.
 ├── ConvFinQA.py
 ├── MultiHiertt.py
 ├── Generation.py       # LLM generation pipeline
+├── RAGAS_Test.py       # Generation evaluation with RAGAS
+├── pre_retrieval.py    # Corpus preprocessing
 ├── dataset/            # Per-dataset corpus, queries, qrels
 └── results/            # Per-dataset retrieval CSVs and summaries
 ```
@@ -121,7 +123,7 @@ Seven financial QA datasets from the FinanceRAG challenge:
 | ConvFinQA | Conversational (earnings) | 2,066 | 421 |
 | MultiHiertt | Multi-hop (annual reports) | 10,475 | 974 |
 
-Each dataset follows a consistent schema: `corpus.jsonl`, `queries.jsonl`, and a `qrels.tsv` ground truth file.
+Each dataset follows a consistent schema: `corpus.jsonl`, `queries.jsonl`, and a `qrels.tsv` ground truth file. Download from the [Kaggle competition page](https://www.kaggle.com/competitions/icaif-24-finance-rag-challenge/data).
 
 ---
 
@@ -131,10 +133,15 @@ Each dataset follows a consistent schema: `corpus.jsonl`, `queries.jsonl`, and a
 git clone https://github.com/AshokPitta/FinanceRAG-Challenge.git
 cd FinanceRAG-Challenge
 
+python -m venv venv
+source venv/bin/activate        # Windows: venv\Scripts\activate
+
 pip install -r requirements.txt
 ```
 
 **Key dependencies:** `sentence-transformers`, `faiss-cpu`, `rank-bm25`, `transformers`, `torch`, `ragas`, `pandas`
+
+> See [SETUP.md](SETUP.md) for full instructions including dataset download, HuggingFace authentication, and HPC/SLURM setup.
 
 ---
 
@@ -148,10 +155,16 @@ python FinQA.py          # Tabular + text retrieval
 python MultiHiertt.py    # Multi-hop retrieval
 ```
 
-Run generation across all datasets:
+Run generation:
 
 ```bash
 python Generation.py
+```
+
+Evaluate generation with RAGAS:
+
+```bash
+python RAGAS_Test.py
 ```
 
 Results are saved to `results/<dataset>/results.csv` (retrieval) and `results/<dataset>/<dataset>_answers.jsonl` (generation).
