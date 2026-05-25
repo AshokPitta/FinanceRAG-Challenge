@@ -1,0 +1,32 @@
+# Datasets — too large, download from Kaggle
+dataset/
+
+# Results output
+results/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+venv/
+.env
+
+# HuggingFace model cache
+.cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+logs/
+*.out
+*.err
+
+# OS
+.DS_Store
+Thumbs.db
