@@ -1,0 +1,21 @@
+# Core ML / retrieval
+torch>=2.1.0
+sentence-transformers>=2.7.0
+faiss-cpu>=1.7.4
+rank-bm25>=0.2.2
+transformers>=4.40.0
+accelerate>=0.27.0
+bitsandbytes>=0.43.0
+huggingface-hub>=0.22.0
+
+# Evaluation
+pytrec-eval-terrier>=0.5.6
+ragas>=0.1.7
+
+# Data
+pandas>=2.0.0
+numpy>=1.26.0
+datasets>=2.18.0
+
+# Utilities
+tqdm>=4.66.0
